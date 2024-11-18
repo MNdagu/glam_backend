@@ -2,7 +2,7 @@ from app import create_app, db
 
 app = create_app()
 
-# Create database tables before the first request
+# Create database tables before the first request gunicorn
 @app.before_first_request
 def initialize_database():
     db.create_all()
